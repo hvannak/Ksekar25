@@ -17,13 +17,32 @@ app.use(compression());
 app.use(express.json({limit: '16mb'}));
 app.use(express.urlencoded({limit: '16mb'}));
 
-const postsRoute = require('./routes/posts');
-app.use('/api/posts',postsRoute);
+const authRoute = require('./routes/auth');
+const languageRoute = require('./routes/language');
+// const localizationRoute = require('./routes/localization');
+
+app.use('/api/auth',authRoute);
+app.use('/api/language',languageRoute);
+// app.use('/api/localization',localizationRoute);
 app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const User = require('./models/User');
+
 mongoose.connect(process.env.DB_CONNECTION,{useNewUrlParser:true,useUnifiedTopology: true},async ()=> {
     console.log('connected to DB');
+    const userDoc = await User.countDocuments();
+    if(!userDoc){
+        //Hash password
+        const salt = await bcrypt.genSalt(10);
+        const hashPassword = await bcrypt.hash('123456',salt);
+        const user = new User({
+            name: 'admin',
+            email: 'vannak2010@gmail.com',
+            password: hashPassword    
+        });
+        await user.save();
+    }
 });
 
 const port = process.env.PORT || process.env.LOCALPORT;
