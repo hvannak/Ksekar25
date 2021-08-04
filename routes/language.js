@@ -10,54 +10,33 @@ router.get('/all', async (req,res) => {
         res.json(result);
     }catch(err){
         logger.error('language page:' + err);
-        res.json({message: err})
+        res.json(err)
     }
 });
 
 router.post('/page',verify,async (req,res) => {
     try{
-        let opt = req.body.pageOpt;
-        var pageSize = opt.itemsPerPage;
-        var currentPage = opt.page;
-        var docObj;
-        var handlenull = (req.body.searchObj == null) ? '' : req.body.searchObj;
-        var filter = (handlenull != '') ? {[req.body.searchObjby]: { "$regex": req.body.searchObj, "$options": "i" } } : {};
-        if(opt.sortBy.length == 1 && opt.sortDesc.length == 1){
-            if(opt.sortDesc[0] == false){
-                console.log('asc');
-                docObj = await Language.find(filter).limit(pageSize).skip(pageSize*(currentPage-1)).sort({
-                    [opt.sortBy[0]]: 'asc'
-                });
-            } else {
-                console.log('desc');
-                docObj = await Language.find(filter).limit(pageSize).skip(pageSize*(currentPage-1)).sort({
-                    [opt.sortBy[0]]: 'desc'
-                });
-            }
-        } else{
-            docObj = await Language.find(filter).limit(pageSize).skip(pageSize*(currentPage-1)).sort({
-                _id: 'asc'
-            });
-        }
+        var reqData = req.body;
+        console.log(reqData);
+        var filter = (reqData.searchObj != '') ? {[reqData.searchObjby]: { "$regex": reqData.searchObj, "$options": "i" } } : {};
+        var docObj = await Language.find(filter).limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
+            [reqData.sortBy]: reqData.sortType
+        });
         var totalItems = await Language.count(filter);
-        res.json({objList:docObj,totalDoc:totalItems});
-
+        res.json({objList:docObj,totalDoc:totalItems});        
     }catch(err){
         logger.error('language page:' + err);
         res.json(err);
     }
 });
 
-router.get('/search/:value',verify,async (req,res) => {
+router.get('/props', async (req,res) => {
     try{
-        var filter = {
-            title: { "$regex": req.params.value, "$options": "i" }
-        };
-        const docObj = await Language.find(filter);
-        res.json(docObj);
+        const props =  Object.keys(Language.schema.paths);
+        res.json(props);
     }catch(err){
-        logger.error('language search:' + err);
-        res.json(err)
+        logger.error('language props:' + err);
+        res.json(err);
     }
 });
 
@@ -72,16 +51,6 @@ router.post('/post',verify,async (req,res)=> {
         res.json({obj:docObj,message:'INSERT'});
     } catch(err) {
         logger.error('language post:' + err);
-        res.json(err);
-    }
-});
-
-router.get('/getById/:langId',verify, async (req,res) => {
-    try{
-        const result = await Language.findById(req.params.langId);
-        res.json(result);
-    }catch(err){
-        logger.error('language getById:' + err);
         res.json(err);
     }
 });
