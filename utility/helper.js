@@ -6,7 +6,7 @@ async function schemaPage(req,res,schema) {
             [reqData.sortBy]: reqData.sortType
         });
         var totalItems = await schema.count(filter);
-        res.json({objList:docObj,totalDoc:totalItems});
+        res.json({objList:docObj,totalDoc:Math.ceil(totalItems/reqData.pageSize)});
     }catch(err){
         console.log(err);
     }
@@ -20,7 +20,7 @@ async function schemaPagewithPopulate1(req,res,schema,populate1) {
             [reqData.sortBy]: reqData.sortType
         }).populate(populate1);
         var totalItems = await schema.count(filter);
-        res.json({objList:docObj,totalDoc:totalItems});
+        res.json({objList:docObj,totalDoc:Math.ceil(totalItems/reqData.pageSize)});
     }catch(err){
         console.log(err);
     }
