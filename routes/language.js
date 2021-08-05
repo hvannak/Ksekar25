@@ -3,6 +3,7 @@ const router = express.Router();
 const Language = require('../models/Language');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
+const {schemaPage} = require('../utility/helper');
 
 router.get('/all', async (req,res) => {
     try{
@@ -16,14 +17,7 @@ router.get('/all', async (req,res) => {
 
 router.post('/page',verify,async (req,res) => {
     try{
-        var reqData = req.body;
-        console.log(reqData);
-        var filter = (reqData.searchObj != '') ? {[reqData.searchObjby]: { "$regex": reqData.searchObj, "$options": "i" } } : {};
-        var docObj = await Language.find(filter).limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
-            [reqData.sortBy]: reqData.sortType
-        });
-        var totalItems = await Language.count(filter);
-        res.json({objList:docObj,totalDoc:totalItems});        
+        await schemaPage(req,res,Language);        
     }catch(err){
         logger.error('language page:' + err);
         res.json(err);
