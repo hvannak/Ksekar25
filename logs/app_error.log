@@ -30,3 +30,14 @@
 {"message":"category post:ValidationError: _id: Cast to ObjectId failed for value \"\" (type string) at path \"_id\"","level":"error","service":"user-interact"}
 {"message":"language post:TypeError: docObj.save is not a function","level":"error","service":"user-interact"}
 {"message":"category put:ReferenceError: updatemessage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user page:ReferenceError: schemaPage is not defined","level":"error","service":"user-interact"}
+{"message":"user put:MongoError: Performing an update on the path '_id' would modify the immutable field '_id'","level":"error","service":"user-interact"}
+{"message":"user put:MongoError: Performing an update on the path '_id' would modify the immutable field '_id'","level":"error","service":"user-interact"}

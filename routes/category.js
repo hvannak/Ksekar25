@@ -3,7 +3,7 @@ const router = express.Router();
 const Category = require('../models/Category');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
-const {schemaPage,schemaPagewithPopulate1} = require('../utility/helper');
+const {schemaPagewithPopulate1} = require('../utility/helper');
 
 router.get('/byLang/:langId', async (req,res) => {
     try{
