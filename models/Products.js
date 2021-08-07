@@ -21,36 +21,23 @@ const postSchema = mongoose.Schema({
         type:String,
         require:true
     },
-    phone:{
-        type:String,
-        require:true
-    },
-    email:{
-        type:String,
-        require:true
-    },
-    location:{
-        type:String,
-        require:true
-    },
     price:{
-        type:mongoose.Decimal128,
+        type:String,
         require:true,
-        default: 0,
-        get: getPrice
+        default: xxx
     },
     currency:{
         type:String,
         require:true
     },
-    firstimage: {
-        type:String,
-        require:false
+    image: {
+        type:Buffer,
+        require:true
     },
     date:{
         type:Date,
         default:Date.now
     }
-},{toJSON: {getters: true}});
+});
 
-module.exports = mongoose.model('Post',postSchema);
+module.exports = mongoose.model('Product',postSchema);

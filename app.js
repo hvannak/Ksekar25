@@ -19,12 +19,14 @@ app.use(express.urlencoded({limit: '16mb'}));
 
 const authRoute = require('./routes/auth');
 const languageRoute = require('./routes/language');
+const currencyRoute = require('./routes/currency');
 const categoryRoute = require('./routes/category');
 const productRoute = require('./routes/product');
 // const localizationRoute = require('./routes/localization');
 
 app.use('/api/auth',authRoute);
 app.use('/api/language',languageRoute);
+app.use('/api/currency',currencyRoute);
 app.use('/api/category',categoryRoute);
 app.use('/api/product',productRoute);
 // app.use('/api/localization',localizationRoute);
