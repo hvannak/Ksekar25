@@ -1,66 +1,74 @@
 const express = require('express');
 const router = express.Router();
-const Category = require('../models/Category');
+const Product = require('../models/Products');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
 const {schemaPagewithPopulate1} = require('../utility/helper');
 
 router.post('/page',verify,async (req,res) => {
     try{
-       await schemaPagewithPopulate1(req,res,Category,'lang');        
+       await schemaPagewithPopulate1(req,res,Product,'category');        
     }catch(err){
-        logger.error('category page:' + err);
+        logger.error('product page:' + err);
         res.json(err);
     }   
 });
 
 router.get('/props', async (req,res) => {
     try{
-        const props =  Object.keys(Category.schema.paths);
+        const props =  Object.keys(Product.schema.paths);
         res.json(props);
     }catch(err){
-        logger.error('language props:' + err);
+        logger.error('product props:' + err);
         res.json(err);
     }
 });
 
 router.post('/post',verify,async (req,res)=> {
-    const docObj = new Category({
+    const docObj = new Product({
+        category: req.body.category,
+        user: req.body.user,
         title: req.body.title,
-        icon: req.body.icon,
-        lang: req.body.lang
+        description: req.body.description,
+        price: req.body.price,
+        currency: req.body.currency,
+        image: req.body.image
     });
     try{
         await docObj.save();
-        let resObj = await Category.find({ _id: docObj._id }).populate('lang');
+        let resObj = await Product.find({ _id: docObj._id }).populate('category');
         res.json({obj:resObj[0],message:'INSERT'});
     } catch(err) {
-        logger.error('category post:' + err);
+        logger.error('product post:' + err);
         res.json(err);
     }
 });
 
-router.delete('/delete/:catId',verify, async (req,res) => {
+router.delete('/delete/:proId',verify, async (req,res) => {
     try{
-        const result = await Category.remove({_id: req.params.catId});
+        const result = await Product.remove({_id: req.params.proId});
         res.json(result);
     }catch(err){
-        logger.error('category delete:' + err);
+        logger.error('product delete:' + err);
         res.json(err)
     }
 });
 
-router.put('/put/:catId',verify, async (req,res) => {
+router.put('/put/:proId',verify, async (req,res) => {
     try{
-        const filter = { _id: req.params.catId };
-        const update = new Category({
+        const filter = { _id: req.params.proId };
+        const update = new Product({
             _id: req.body._id,
+            category: req.body.category,
+            user: req.body.user,
             title: req.body.title,
-            icon: req.body.icon,
-            lang: req.body.lang     
+            description: req.body.description,
+            price: req.body.price,
+            currency: req.body.currency,
+            image: req.body.image
         });
-        await Category.update(filter,update);
-        let resObj = await Category.find(filter).populate('lang');
+        await Product.update(filter,update);
+        let resObj = await Product.find(filter).populate('lang');
         res.json({obj:resObj[0],message:'UPDATE'});
     }catch(err){
         logger.error('category put:' + err);

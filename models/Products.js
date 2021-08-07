@@ -1,10 +1,4 @@
 const mongoose = require('mongoose');
-function getPrice(value) {
-    if (typeof value !== 'undefined') {
-       return parseFloat(value.toString());
-    }
-    return value;
-};
 
 const postSchema = mongoose.Schema({
     category:{
@@ -24,7 +18,7 @@ const postSchema = mongoose.Schema({
     price:{
         type:String,
         require:true,
-        default: xxx
+        default: 'xxx'
     },
     currency:{
         type:String,
