@@ -20,9 +20,8 @@ const postSchema = mongoose.Schema({
         require:true,
         default: 'xxx'
     },
-    currency:{
-        type:String,
-        require:true
+    currency: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Currency'
     },
     image: {
         type:Buffer,

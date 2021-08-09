@@ -3,11 +3,11 @@ const router = express.Router();
 const Product = require('../models/Products');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
-const {schemaPagewithPopulate1} = require('../utility/helper');
+const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
 
 router.post('/page',verify,async (req,res) => {
     try{
-       await schemaPagewithPopulate1(req,res,Product,'category');        
+       await schemaPagewithPopulate2(req,res,Product,'category','currency');        
     }catch(err){
         logger.error('product page:' + err);
         res.json(err);
@@ -27,7 +27,7 @@ router.get('/props', async (req,res) => {
 router.post('/post',verify,async (req,res)=> {
     const docObj = new Product({
         category: req.body.category,
-        user: req.body.user,
+        user: getuserId(req)._id,
         title: req.body.title,
         description: req.body.description,
         price: req.body.price,
@@ -60,7 +60,6 @@ router.put('/put/:proId',verify, async (req,res) => {
         const update = new Product({
             _id: req.body._id,
             category: req.body.category,
-            user: req.body.user,
             title: req.body.title,
             description: req.body.description,
             price: req.body.price,
