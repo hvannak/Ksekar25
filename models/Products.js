@@ -1,5 +1,12 @@
 const mongoose = require('mongoose');
 
+function getPrice(value) {
+    if (typeof value !== 'undefined') {
+       return parseFloat(value.toString());
+    }
+    return value;
+};
+
 const postSchema = mongoose.Schema({
     category:{
         type: mongoose.Schema.Types.ObjectId, ref: 'Category'
@@ -20,6 +27,12 @@ const postSchema = mongoose.Schema({
         require:true,
         default: 'xxx'
     },
+    actualprice: {
+        type: mongoose.Types.Decimal128,
+        require:true,
+        default: 0,
+        get: getPrice
+    },
     currency: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Currency'
     },
@@ -31,6 +44,6 @@ const postSchema = mongoose.Schema({
         type:Date,
         default:Date.now
     }
-});
+},{toJSON: {getters: true}});
 
 module.exports = mongoose.model('Product',postSchema);

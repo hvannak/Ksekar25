@@ -18,31 +18,31 @@ router.post('/search',async (req,res) => {
     try{
         var reqData = req.body;
         let dynamicQuery = {};
-
-        if(req.body.categoryId != '0'){
+        if(reqData.category != '0'){
             dynamicQuery["category"] = reqData.category
         }
-        if(filterObj.title != ""){
+        if(reqData.title != ""){
             dynamicQuery["title"] = { "$regex": reqData.title, "$options": "i" }
         }
-        if(filterObj.description != ""){
+        if(reqData.description != ""){
             dynamicQuery["description"] = { "$regex": reqData.description, "$options": "i" }
         }
 
         if(reqData.fromprice && reqData.toprice){
-            dynamicQuery["price"] = { $lte: reqData.toprice, $gte: reqData.fromprice }
-            if(filterObj.currency != "0"){
+            dynamicQuery["actualprice"] = { $lte: reqData.toprice, $gte: reqData.fromprice }
+            if(reqData.currency != "0"){
                 dynamicQuery["currency"] = reqData.currency
             }
         }
         console.log(dynamicQuery);
         docObj = await Product.find({$and:[dynamicQuery]}).limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
             date: 'desc'
-        });
+        }).populate('currency');
 
         var totalItems = await Product.count({$and:[dynamicQuery]});
-        res.json({objList:docObj,totalDoc:totalItems});       
+        res.json({objList:docObj,totalDoc:Math.ceil(totalItems/reqData.pageSize)});       
     }catch(err){
+        console.log(err);
         logger.error('product page:' + err);
         res.json(err);
     }   
@@ -65,6 +65,7 @@ router.post('/post',verify,async (req,res)=> {
         title: req.body.title,
         description: req.body.description,
         price: req.body.price,
+        actualprice: req.body.actualprice,
         currency: req.body.currency,
         image: req.body.image
     });
@@ -97,6 +98,7 @@ router.put('/put/:proId',verify, async (req,res) => {
             title: req.body.title,
             description: req.body.description,
             price: req.body.price,
+            actualprice: req.body.actualprice,
             currency: req.body.currency,
             image: req.body.image
         });
