@@ -23,6 +23,7 @@ const currencyRoute = require('./routes/currency');
 const categoryRoute = require('./routes/category');
 const notificationRoute = require('./routes/notification');
 const productRoute = require('./routes/product');
+const postRoute = require('./routes/posts');
 // const localizationRoute = require('./routes/localization');
 
 app.use('/api/auth',authRoute);
@@ -31,6 +32,7 @@ app.use('/api/currency',currencyRoute);
 app.use('/api/category',categoryRoute);
 app.use('/api/notification',notificationRoute);
 app.use('/api/product',productRoute);
+app.use('/api/post',postRoute);
 // app.use('/api/localization',localizationRoute);
 app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
