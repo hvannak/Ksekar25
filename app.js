@@ -21,6 +21,7 @@ const authRoute = require('./routes/auth');
 const languageRoute = require('./routes/language');
 const currencyRoute = require('./routes/currency');
 const categoryRoute = require('./routes/category');
+const notificationRoute = require('./routes/notification');
 const productRoute = require('./routes/product');
 // const localizationRoute = require('./routes/localization');
 
@@ -28,6 +29,7 @@ app.use('/api/auth',authRoute);
 app.use('/api/language',languageRoute);
 app.use('/api/currency',currencyRoute);
 app.use('/api/category',categoryRoute);
+app.use('/api/notification',notificationRoute);
 app.use('/api/product',productRoute);
 // app.use('/api/localization',localizationRoute);
 app.use(history());

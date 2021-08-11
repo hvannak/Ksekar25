@@ -34,7 +34,7 @@ router.post('/search',async (req,res) => {
                 dynamicQuery["currency"] = reqData.currency
             }
         }
-        console.log(dynamicQuery);
+
         docObj = await Product.find({$and:[dynamicQuery]}).limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
             date: 'desc'
         }).populate('currency');
