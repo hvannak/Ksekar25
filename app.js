@@ -24,6 +24,7 @@ const categoryRoute = require('./routes/category');
 const notificationRoute = require('./routes/notification');
 const productRoute = require('./routes/product');
 const postRoute = require('./routes/posts');
+const presentationRoute = require('./routes/presentation');
 // const localizationRoute = require('./routes/localization');
 
 app.use('/api/auth',authRoute);
@@ -33,6 +34,7 @@ app.use('/api/category',categoryRoute);
 app.use('/api/notification',notificationRoute);
 app.use('/api/product',productRoute);
 app.use('/api/post',postRoute);
+app.use('/api/presentation',presentationRoute);
 // app.use('/api/localization',localizationRoute);
 app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
