@@ -1,44 +1,44 @@
 const express = require('express');
 const router = express.Router();
-const Presentation = require('../models/Presentation');
+const Promotion = require('../models/Promotion');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
-const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
+const {schemaPagewithPopulate1,getuserId} = require('../utility/helper');
 
 
 router.get('/all', async (req,res) => {
     try{
         console.log(req.body);
-        const result = await Presentation.find();
+        const result = await Promotion.find();
         res.json(result);
     }catch(err){
-        logger.error('presentation all:' + err);
+        logger.error('Promotion all:' + err);
         res.json(err)
     }
 });
 
 router.post('/page',verify,async (req,res) => {
     try{
-       await schemaPagewithPopulate2(req,res,Presentation,'lang','user');        
+        console.log(req.body);
+       await schemaPagewithPopulate1(req,res,Promotion,'user');        
     }catch(err){
-        logger.error('presentation page:' + err);
+        logger.error('Promotion page:' + err);
         res.json(err);
     }   
 });
 
 router.get('/props', async (req,res) => {
     try{
-        const props =  Object.keys(Presentation.schema.paths);
+        const props =  Object.keys(Promotion.schema.paths);
         res.json(props);
     }catch(err){
-        logger.error('presentation props:' + err);
+        logger.error('Promotion props:' + err);
         res.json(err);
     }
 });
 
 router.post('/post',verify,async (req,res)=> {
-    const docObj = new Presentation({
-        lang: req.body.lang,
+    const docObj = new Promotion({
         user: getuserId(req)._id,
         title: req.body.title,
         description: req.body.description,
@@ -46,20 +46,20 @@ router.post('/post',verify,async (req,res)=> {
     });
     try{
         await docObj.save();
-        let resObj = await Presentation.find({ _id: docObj._id }).populate('lang').populate('user');
+        let resObj = await Promotion.find({ _id: docObj._id }).populate('lang').populate('user');
         res.json({obj:resObj[0],message:'INSERT'});
     } catch(err) {
-        logger.error('presentation post:' + err);
+        logger.error('Promotion post:' + err);
         res.json(err);
     }
 });
 
 router.delete('/delete/:postId',verify, async (req,res) => {
     try{
-        const result = await Presentation.remove({_id: req.params.postId});
+        const result = await Promotion.remove({_id: req.params.postId});
         res.json(result);
     }catch(err){
-        logger.error('presentation delete:' + err);
+        logger.error('Promotion delete:' + err);
         res.json(err)
     }
 });
@@ -67,15 +67,14 @@ router.delete('/delete/:postId',verify, async (req,res) => {
 router.put('/put/:postId',verify, async (req,res) => {
     try{
         const filter = { _id: req.params.postId };
-        const update = new Presentation({
+        const update = new Promotion({
             _id: req.body._id,
-            lang: req.body.lang,
             title: req.body.title,
             description: req.body.description,
             image: req.body.image
         });
-        await Presentation.update(filter,update);
-        let resObj = await Presentation.find(filter).populate('lang').populate('user');
+        await Promotion.update(filter,update);
+        let resObj = await Promotion.find(filter).populate('lang').populate('user');
         res.json({obj:resObj[0],message:'UPDATE'});
     }catch(err){
         logger.error('post put:' + err);
