@@ -29,3 +29,24 @@
 {"message":"post fetch:ReferenceError: filter is not defined","level":"error","service":"user-interact"}
 {"message":"post fetch:ReferenceError: filter is not defined","level":"error","service":"user-interact"}
 {"message":"post fetch:ReferenceError: filter is not defined","level":"error","service":"user-interact"}
+{"message":"localization page:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"localization page:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"localization page:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"localization page:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"localization page:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"localization page:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"localization post:MongoError: E11000 duplicate key error collection: ksekar25.localizations index: props_1 dup key: { props: \"title\" }","level":"error","service":"user-interact"}
+{"message":"localization post:MongoError: E11000 duplicate key error collection: ksekar25.localizations index: props_1 dup key: { props: \"title\" }","level":"error","service":"user-interact"}
+{"message":"localization post:MongoError: E11000 duplicate key error collection: ksekar25.localizations index: props_1 dup key: { props: \"title\" }","level":"error","service":"user-interact"}
+{"message":"localization post:MongoError: E11000 duplicate key error collection: ksekar25.localizations index: props_1 dup key: { props: \"title\" }","level":"error","service":"user-interact"}
+{"message":"localization post:MongoError: E11000 duplicate key error collection: ksekar25.localizations index: props_1 dup key: { props: \"title\" }","level":"error","service":"user-interact"}
+{"message":"localization switch:TypeError: Cannot read property '_id' of undefined","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}

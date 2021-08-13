@@ -26,7 +26,7 @@ const productRoute = require('./routes/product');
 const postRoute = require('./routes/posts');
 const presentationRoute = require('./routes/presentation');
 const promotionRoute = require('./routes/promotion');
-// const localizationRoute = require('./routes/localization');
+const localizationRoute = require('./routes/localization');
 
 app.use('/api/auth',authRoute);
 app.use('/api/language',languageRoute);
@@ -37,7 +37,7 @@ app.use('/api/product',productRoute);
 app.use('/api/post',postRoute);
 app.use('/api/presentation',presentationRoute);
 app.use('/api/promotion',promotionRoute);
-// app.use('/api/localization',localizationRoute);
+app.use('/api/localization',localizationRoute);
 app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
 

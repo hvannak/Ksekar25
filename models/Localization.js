@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const localizationSchema = mongoose.Schema({
     props:{
         type:String,
-        require:true,
-        unique: true
+        require:true
     },
     lang:{ 
         type: mongoose.Schema.Types.ObjectId, ref: 'Language' 

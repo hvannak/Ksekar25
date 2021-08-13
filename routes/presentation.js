@@ -8,7 +8,6 @@ const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
 
 router.get('/all', async (req,res) => {
     try{
-        console.log(req.body);
         const result = await Presentation.find();
         res.json(result);
     }catch(err){
