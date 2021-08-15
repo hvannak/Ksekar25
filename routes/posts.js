@@ -15,7 +15,7 @@ router.post('/page',verify,async (req,res) => {
     }   
 });
 
-router.post('/fetch',verify,async (req,res) => {
+router.post('/fetch',async (req,res) => {
     try{
         var reqData = req.body;
         let lang = null;
@@ -31,6 +31,7 @@ router.post('/fetch',verify,async (req,res) => {
         var totalItems = await Post.count({lang:lang});
         res.json({objList:docObj,totalDoc:Math.ceil(totalItems/reqData.pageSize)});
     }catch(err){
+        console.log(err);
         logger.error('post fetch:' + err);
         console.log(err);
     } 

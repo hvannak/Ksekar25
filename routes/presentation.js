@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Presentation = require('../models/Presentation');
+const Language = require('../models/Language');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
 const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
@@ -16,10 +17,10 @@ router.post('/all', async (req,res) => {
         } else {
             lang = reqData.lang;
         }
-        console.log('language' + lang);
         const result = await Presentation.find({lang:lang});
         res.json(result);
     }catch(err){
+        console.log(err);
         logger.error('presentation all:' + err);
         res.json(err)
     }

@@ -86,3 +86,47 @@
 {"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
 {"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
 {"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{ _shallow: false, __v_isRef: true, _rawValue: null, _value: null }\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:CastError: Cast to ObjectId failed for value \"{\n  _shallow: false,\n  __v_isRef: true,\n  _rawValue: '610a16c3b74983133ce60cb6',\n  _value: '610a16c3b74983133ce60cb6'\n}\" (type Object) at path \"lang\" for model \"Presentation\"","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
