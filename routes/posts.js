@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
+const Language = require('../models/Language');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
 const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
@@ -17,10 +18,17 @@ router.post('/page',verify,async (req,res) => {
 router.post('/fetch',verify,async (req,res) => {
     try{
         var reqData = req.body;
-        var docObj = await Post.find().limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
+        let lang = null;
+        if(reqData.lang == null){
+            const langresult = await Language.find({default: true});
+            lang = langresult[0]._id;
+        } else {
+            lang = reqData.lang;
+        } 
+        var docObj = await Post.find({lang:lang}).limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
             date: 'desc'
         });
-        var totalItems = await Post.count();
+        var totalItems = await Post.count({lang:lang});
         res.json({objList:docObj,totalDoc:Math.ceil(totalItems/reqData.pageSize)});
     }catch(err){
         logger.error('post fetch:' + err);

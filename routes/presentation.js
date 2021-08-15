@@ -6,9 +6,18 @@ const {logger} = require('../logger');
 const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
 
 
-router.get('/all', async (req,res) => {
+router.post('/all', async (req,res) => {
     try{
-        const result = await Presentation.find();
+        var reqData = req.body;
+        let lang = null;
+        if(reqData.lang == null){
+            const langresult = await Language.find({default: true});
+            lang = langresult[0]._id;
+        } else {
+            lang = reqData.lang;
+        }
+        console.log('language' + lang);
+        const result = await Presentation.find({lang:lang});
         res.json(result);
     }catch(err){
         logger.error('presentation all:' + err);

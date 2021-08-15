@@ -19,8 +19,15 @@ router.post('/page',verify,async (req,res) => {
 
 router.get('/switch/:lang', async (req,res) => {
     try{
-        const langresult = await Language.find({default: true});
-        let lang = (req.params.lang == 'null') ? langresult[0]._id : req.params.lang;
+        // const langresult = await Language.find({default: true});
+        // let lang = (req.params.lang == 'null') ? langresult[0]._id : req.params.lang;
+        let lang = null;
+        if(req.params.lang == 'null'){
+            const langresult = await Language.find({default: true});
+            lang = langresult[0]._id;
+        } else {
+            lang = req.params.lang;
+        }     
         const result = await Localization.find({lang: lang});
         res.json(result);
     }catch(err){

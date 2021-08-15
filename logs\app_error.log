@@ -50,3 +50,39 @@
 {"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
 {"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
 {"message":"localization switch:CastError: Cast to ObjectId failed for value \"null\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"localization switch:CastError: Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"lang\" for model \"Localization\"","level":"error","service":"user-interact"}
+{"message":"language page:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"localization switch:MongooseError: Operation `localizations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"presentation all:MongooseError: Operation `presentations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"post fetch:MongooseError: Operation `posts.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"language page:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"localization switch:MongooseError: Operation `localizations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"presentation all:MongooseError: Operation `presentations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"post fetch:MongooseError: Operation `posts.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"post fetch:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"language page:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"localization switch:MongooseError: Operation `localizations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"presentation all:MongooseError: Operation `presentations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"post fetch:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"language page:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"localization switch:MongooseError: Operation `localizations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"presentation all:MongooseError: Operation `presentations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"post fetch:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: reqData is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: reqData is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: reqData is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
+{"message":"presentation all:ReferenceError: Language is not defined","level":"error","service":"user-interact"}
