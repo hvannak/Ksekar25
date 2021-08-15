@@ -8,7 +8,6 @@ const {schemaPagewithPopulate1,getuserId} = require('../utility/helper');
 
 router.get('/all', async (req,res) => {
     try{
-        console.log(req.body);
         const result = await Promotion.find();
         res.json(result);
     }catch(err){
@@ -19,7 +18,6 @@ router.get('/all', async (req,res) => {
 
 router.post('/page',verify,async (req,res) => {
     try{
-        console.log(req.body);
        await schemaPagewithPopulate1(req,res,Promotion,'user');        
     }catch(err){
         logger.error('Promotion page:' + err);

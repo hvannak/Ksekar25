@@ -130,3 +130,11 @@
 {"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
 {"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
 {"message":"verify token:JsonWebTokenError: jwt malformed","level":"error","service":"user-interact"}
+{"message":"category ByLang:CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"lang\" for model \"Category\"","level":"error","service":"user-interact"}
+{"message":"notification search:MongooseError: Operation `notifications.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"language page:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"localization switch:MongooseError: Operation `localizations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"notification search:MongooseError: Operation `notifications.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"language page:MongooseError: Operation `languages.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"localization switch:MongooseError: Operation `localizations.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}
+{"message":"notification search:MongooseError: Operation `notifications.find()` buffering timed out after 10000ms","level":"error","service":"user-interact"}

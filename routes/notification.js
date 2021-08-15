@@ -16,8 +16,22 @@ router.post('/page',verify,async (req,res) => {
 
 router.post('/search',async (req,res) => {
     try{
-       await schemaPage(req,res,Notification);        
+    //    await schemaPage(req,res,Notification);
+        var reqData = req.body;
+        let lang = null;
+        if(reqData.lang == null){
+            const langresult = await Notification.find({default: true});
+            lang = langresult[0]._id;
+        } else {
+            lang = reqData.lang;
+        } 
+        var docObj = await Notification.find({lang:lang}).limit(reqData.pageSize).skip(reqData.pageSize*(reqData.page-1)).sort({
+            date: 'desc'
+        });
+        var totalItems = await Notification.count({lang:lang});
+        res.json({objList:docObj,totalDoc:Math.ceil(totalItems/reqData.pageSize)});        
     }catch(err){
+        console.log(err);
         logger.error('notification search:' + err);
         res.json(err);
     }   
