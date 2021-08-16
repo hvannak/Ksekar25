@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/Products');
+const Category = require('../models/Category');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
 const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
@@ -20,6 +21,13 @@ router.post('/search',async (req,res) => {
         let dynamicQuery = {};
         if(reqData.category != '0'){
             dynamicQuery["category"] = reqData.category
+        } else {
+            var categoryList = await Category.find({lang:reqData.lang}).select('_id');
+            let querybuilder = [];
+            for (const [i, v] of categoryList.entries()) {
+                querybuilder.push(v._id)
+            }
+            dynamicQuery["category"] = { $in: querybuilder }
         }
         if(reqData.title != ""){
             dynamicQuery["title"] = { "$regex": reqData.title, "$options": "i" }
