@@ -153,3 +153,29 @@
 {"message":"product page:CastError: Cast to ObjectId failed for value \"'610b80b61a964811f8c297c3','610ca777d7eab336447172fd'\" (type string) at path \"category\" for model \"Product\"","level":"error","service":"user-interact"}
 {"message":"product page:CastError: Cast to ObjectId failed for value \"[\n  { _id: 610b80b61a964811f8c297c3 },\n  { _id: 610ca777d7eab336447172fd }\n]\" (type Array) at path \"category\" for model \"Product\"","level":"error","service":"user-interact"}
 {"message":"product page:CastError: Cast to ObjectId failed for value \"[ 610b80b61a964811f8c297c3, 610ca777d7eab336447172fd ]\" (type Array) at path \"category\" for model \"Product\"","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}
+{"message":"product page:MongoError: $regex has to be a string","level":"error","service":"user-interact"}

@@ -56,6 +56,17 @@ router.post('/search',async (req,res) => {
     }   
 });
 
+router.get('/byId/:proId', async (req,res) => {
+    try{
+        const filter = { _id: req.params.proId };
+        let docObj = await Product.find(filter).populate('currency');
+        res.json(docObj[0]);
+    }catch(err){
+        logger.error('product props:' + err);
+        res.json(err);
+    }
+});
+
 router.get('/props', async (req,res) => {
     try{
         const props =  Object.keys(Product.schema.paths);
