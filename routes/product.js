@@ -67,6 +67,19 @@ router.get('/byId/:proId', async (req,res) => {
     }
 });
 
+router.get('/byCatId/:catId', async (req,res) => {
+    try{
+        const filter = { category: req.params.catId };
+        let docObj = await Product.find(filter).limit(4).sort({
+            date: 'desc'
+        }).populate('currency');
+        res.json(docObj);
+    }catch(err){
+        logger.error('product props:' + err);
+        res.json(err);
+    }
+});
+
 router.get('/props', async (req,res) => {
     try{
         const props =  Object.keys(Product.schema.paths);

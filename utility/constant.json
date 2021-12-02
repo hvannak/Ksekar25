@@ -40,5 +40,8 @@
     },
     {
         "name":"last_updated"
+    },
+    {
+        "name":"related"
     }
 ]
