@@ -15,6 +15,9 @@
         "name":"price"
     },
     {
+        "name":"quantity"
+    },
+    {
         "name":"fromprice"
     },
     {
@@ -43,5 +46,8 @@
     },
     {
         "name":"related"
+    },
+    {
+        "name":"quotation"
     }
 ]
