@@ -49,5 +49,8 @@
     },
     {
         "name":"quotation"
+    },
+    {
+        "name":"add_card"
     }
 ]
