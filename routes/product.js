@@ -5,6 +5,7 @@ const Category = require('../models/Category');
 const verify = require('../routes/verifyToken');
 const {logger} = require('../logger');
 const {schemaPagewithPopulate2,getuserId} = require('../utility/helper');
+const puppeteer = require('puppeteer');
 
 router.post('/page',verify,async (req,res) => {
     try{
@@ -58,6 +59,12 @@ router.post('/search',async (req,res) => {
 
 router.get('/byId/:proId', async (req,res) => {
     try{
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto('https://example.com');
+        await page.pdf({ path: 'hn.pdf', format: 'a4' });
+        await browser.close();
+
         const filter = { _id: req.params.proId };
         let docObj = await Product.find(filter).populate('currency');
         res.json(docObj[0]);
