@@ -59,12 +59,6 @@ router.post('/search',async (req,res) => {
 
 router.get('/byId/:proId', async (req,res) => {
     try{
-        const browser = await puppeteer.launch();
-        const page = await browser.newPage();
-        await page.goto('https://example.com');
-        await page.pdf({ path: 'hn.pdf', format: 'a4' });
-        await browser.close();
-
         const filter = { _id: req.params.proId };
         let docObj = await Product.find(filter).populate('currency');
         res.json(docObj[0]);
@@ -93,6 +87,30 @@ router.get('/props', async (req,res) => {
         res.json(props);
     }catch(err){
         logger.error('product props:' + err);
+        res.json(err);
+    }
+});
+
+router.post('/sendemail',async (req,res)=> {
+    try{
+        console.log(req.body);
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.setContent(`
+        <html>
+        <body>
+        
+        <h1 style="color:blue;">A Blue Heading</h1>
+        
+        <p style="color:red;">A red paragraph.</p>
+            ${req.body.pdf}
+        </body>
+        </html>
+        `);
+        await page.pdf({ path: 'hn.pdf', format: 'a4' });
+        await browser.close();
+    } catch(err) {
+        logger.error('product send email:' + err);
         res.json(err);
     }
 });
